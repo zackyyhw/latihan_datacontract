@@ -1,6 +1,6 @@
 syntax = "proto3";
 package order.v1;
-option go_package = "github.com/zackyyhw/latihan_datacontract/contracts/order/v1;orderv1";
+option go_package = "github.com/zackyyhw/latihan-datacontract/contracts/order/v1;orderv1";
 
 // =============================================
 // DATA CONTRACT: Order Domain
