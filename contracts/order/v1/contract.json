@@ -1,0 +1,20 @@
+{
+  "name": "order-service",
+  "version": "1.0.0",
+  "owner": "team-order",
+  "endpoint": "localhost:50051",
+  "sla": {
+    "latency_p99_ms": 100,
+    "availability": 0.999
+  },
+  "fields": {
+    "order_id":    "UUID dari tabel orders",
+    "customer_id": "ID pelanggan",
+    "total":       "Total harga dalam Rupiah",
+    "status":      "PENDING | COMPLETED | CANCELLED",
+    "created_at":  "Unix timestamp"
+  },
+  "changelog": [
+    { "version": "1.0.0", "note": "Initial contract" }
+  ]
+}

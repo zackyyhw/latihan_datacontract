@@ -1,3 +1,34 @@
 syntax = "proto3";
 package order.v1;
-// option go_package = "github.com/zackyyhw"
+option go_package = "github.com/zackyyhw/data-mesh-demo/contracts/order/v1;orderv1";
+
+// =============================================
+// DATA CONTRACT: Order Domain
+// Owner: team-order
+// Version: 1.0.0
+// =============================================
+
+message Order {
+    string order_id = 1;
+    string customer_id = 2;
+    double total = 3;
+    string status = 4;
+    int64 created_at = 5;
+}
+
+message GetOrderRequest {
+    string order_id = 1;
+}
+
+message ListOrdersRequest {
+    string customer_id = 1;
+}
+
+message ListOrdersResponse {
+    repeated Order orders = 1;
+}
+
+service OrderService {
+    rpc GetOrder(GetOrderRequest) returns (Order);
+    rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse);
+}
